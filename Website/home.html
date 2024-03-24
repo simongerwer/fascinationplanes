@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fascination </title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .menu {
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      transition: width 0.3s ease;
+    }
+    .menu:hover {
+      width: 150px;
+    }
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .menu li {
+      padding: 10px 0;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+    .menu a:hover {
+      font-size: 18px;
+    }
+    .title-section {
+      padding: 20px;
+      text-align: center;
+      color: white; /* Schriftfarbe auf Weiß ändern */
+      background-image: url('https://media.istockphoto.com/id/1044748178/de/foto/auf-der-suche-nach-ende.jpg?s=612x612&w=0&k=20&c=qil9mt31j_h5v50ADV3L_2grx3KRPKPev75VRkk598M=');
+      background-size: cover;
+      background-position: center;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7); /* Hintergrundfarbe mit Transparenz für bessere Lesbarkeit */
+      color: white;
+    }
+    .language-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .language-buttons button {
+      margin: 0 5px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="menu">
+      <ul>
+        <li><a href="#" onclick="showHome()">Home</a></li>
+        <li><a href="#" onclick="showAboutMe()">About Me</a></li>
+        <li><a href="#" onclick="showHistory()">History of Planes</a></li>
+        <li><a href="#" onclick="showJets()">Jets</a></li>
+      </ul>
+    </div>
+    <div class="title-section">
+      <h1 id="page-title">Welcome to Fascination Planes</h1>
+      <p id="page-content">Since the 18th century humans have tried to fly like birds but they did not know the aerodynamics of a bird so they just tried and tried until the German Otto Lilienthal built a glider with which he was able to fly around 200 meters. In 1903 the Wright brothers built the first motorized aircraft that also flew. In the 18th Century the first Airships and Balloons were invented.</p>
+      <p>This WebPage is about me and Planes and has Information about Passenger Planes and the History of Planes and Jets.</p>
+      <p>Für die die Englisch nicht sprechen ist hier der Link damit Sie die Texte übersetzen können: <a href="https://www.deepl.com/en/translator">DeepL Translator</a></p>
+    </div>
+    <div class="content">
+    </div>
+    <div class="language-buttons">
+      <button onclick="changeLanguage('de')">DE</button>
+      <button onclick="changeLanguage('fr')">FR</button>
+      <button onclick="changeLanguage('en')">EN</button>
+    </div>
+  </div>
+
+  <script>
+    function showHome() {
+      changeLanguage(currentLanguage);
+    }
+
+    function showAboutMe() {
+      var pageTitle = document.getElementById('page-title');
+      var pageContent = document.getElementById('page-content');
+      
+      pageTitle.innerText = 'About Me';
+      pageContent.innerText = 'Your About Me content here.';
+    }
+
+    function showHistory() {
+      var pageTitle = document.getElementById('page-title');
+      var pageContent = document.getElementById('page-content');
+      
+      pageTitle.innerText = 'History of Planes';
+      pageContent.innerText = 'Your History of Planes content here.';
+    }
+
+    function showJets() {
+      var pageTitle = document.getElementById('page-title');
+      var pageContent = document.getElementById('page-content');
+      
+      pageTitle.innerText = 'Jets';
+      pageContent.innerText = 'Your Jets content here.';
+    }
+
+    var currentLanguage = 'en';
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      var pageTitle = document.getElementById('page-title');
+      var pageContent = document.getElementById('page-content');
+
+      if (lang === 'de') {
+        pageTitle.innerText = 'Willkommen bei Faszination Flugzeuge';
+        pageContent.innerText = 'Seit dem 18. Jahrhundert versuchen Menschen wie Vögel zu fliegen, aber sie kannten nicht die Aerodynamik eines Vogels, also haben sie es einfach versucht und versucht, bis der Deutsche Otto Lilienthal einen Gleiter baute, mit dem er etwa 200 Meter fliegen konnte. Im Jahr 1903 bauten die Brüder Wright das erste motorisierte Flugzeug, das ebenfalls flog. Im 18. Jahrhundert wurden die ersten Luftschiffe und Ballons erfunden.';
+      } else if (lang === 'fr') {
+        pageTitle.innerText = 'Bienvenue chez Faszination Planes';
+        pageContent.innerText = 'Depuis le 18ème siècle, les humains ont essayé de voler comme des oiseaux, mais ils ne connaissaient pas l’aérodynamique d\'un oiseau, alors ils ont juste essayé et essayé jusqu\'à ce que l\'Allemand Otto Lilienthal construise un planeur avec lequel il a pu voler environ 200 mètres. En 1903, les frères Wright ont construit le premier avion motorisé qui volait aussi. Au 18ème siècle, les premiers dirigeables et ballons ont été inventés.';
+      } else if (lang === 'en') {
+        pageTitle.innerText = 'Welcome to Fascination Planes';
+        pageContent.innerText = 'Since the 18th century humans have tried to fly like birds but they did not know the aerodynamics of a bird so they just tried and tried until the German Otto Lilienthal built a glider with which he was able to fly around 200 meters. In 1903 the Wright brothers built the first motorized aircraft that also flew. In the 18th Century the first Airships and Balloons were invented.';
+      }
+    }
+  </script>
+</body>
+</html>
